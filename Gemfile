@@ -14,6 +14,7 @@ gem 'figaro', '1.0'
  
  group :development do
    gem 'sqlite3'
+   gem 'annotate'
  end
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
