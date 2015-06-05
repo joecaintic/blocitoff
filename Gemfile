@@ -7,6 +7,7 @@ gem 'rails', '4.2.1'
 gem 'bootstrap-sass'
 gem "bcrypt", :require => "bcrypt"
 gem 'figaro', '1.0'
+gem 'faker'
  group :production do
    gem 'pg'
    gem 'rails_12factor'
