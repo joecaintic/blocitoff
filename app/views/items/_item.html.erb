@@ -1,7 +1,10 @@
-<% @items.each do |item| %>
+<%= content_tag :div, class: 'media', id: "item-#{item.id}" do %>
   <div class = "row">
     <div class="col-md-8">
-      <p><%= item.name %></p>
+      <p><%= item.name %>
+      <% if policy(item).destroy? %>
+        <%= link_to "", [item.user, item], class: 'glyphicon glyphicon-ok', method: :delete, remote: true %> </p>
+      <% end %>
     </div>
-  </div> 
+  </div>
 <% end %>
