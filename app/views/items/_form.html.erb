@@ -1,0 +1,23 @@
+<%= form_for [user, item] do |f| %>
+  <% if item.errors.any? %>
+    <div class= "alert alert-danger">
+      <h4>There are <%= pluralize(item.errors.count, "error") %>.</h4>
+      <ul>
+        <% item.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+          <% end %>
+      </ul>
+    </div>
+  <% end %>
+<% end %>
+
+  <div class= "form-inline">
+    <%= form_group_tag(item.errors[:name]) do %>
+      <% f.label :name %>
+      <%= f.text_field :name, class: 'form-control' %>
+    <% end %>
+
+    <div class="form-group">
+      <%= f.submit "Item", class: 'btn btn-default' %>
+    </div>
+  </div>
