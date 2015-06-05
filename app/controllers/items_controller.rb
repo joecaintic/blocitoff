@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
   def create
     @user = User.find(params[:user_id])
-    @item = Item.new(post_params)
+    @item = @user.items.build(item_params)
     authorize @item
     if @item.save
       flash[:notice] = "Item was saved"
@@ -14,7 +14,7 @@ class ItemsController < ApplicationController
 
   private
 
-    def post_params
+    def item_params
       params.require(:item).permit(:name)
     end
 

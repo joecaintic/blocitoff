@@ -7,6 +7,7 @@ class UsersController < ApplicationController
   def show
     #raise
     # @user = User.find(params[:id])
+    @items = current_user.items
   end
 
   #def create
