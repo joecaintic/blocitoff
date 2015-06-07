@@ -1,9 +1,13 @@
 <%= content_tag :div, class: 'media', id: "item-#{item.id}" do %>
   <div class = "row">
     <div class="col-md-8">
-      <p><%= item.name %>
+      <p><%= item.name %> 
       <% if policy(item).destroy? %>
-        <%= link_to "", [item.user, item], class: 'glyphicon glyphicon-ok', method: :delete, remote: true %> </p>
+        <%= link_to "", [item.user, item], class: 'glyphicon glyphicon-ok', method: :delete, remote: true %> 
+      <div>
+        <small><%= item.days_left %> days left </small>
+      </div>
+      </p>
       <% end %>
     </div>
   </div>
