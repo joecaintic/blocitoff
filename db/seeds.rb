@@ -25,12 +25,16 @@ users = User.all
 #Create Items
 
 50.times do
-  Item.create!(
+  item = Item.create!(
     user:  users.sample,
     name:  Faker::Lorem.sentence
   )
+
+  item.update_attributes!(created_at: rand(10.minutes .. 1.year).ago)
 end
 items = Item.all
+
+
 
 user = User.new(
   name:       'Joseph Caintic',
